@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dice-Game</title>
+        <script src="./script.js" defer></script>
+        <link rel="styleSheet" href="./style.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+        </style>
+    </head>
+    <body>
+        <main>
+            <!-- modal rules -->
+            <section id="rulesGameModal" class="modal">
+                <div class="modal-content">
+                    <h2>-RULES-</h2>
+                    <p>
+                        -The game has 2 players, playing in rounds <br />
+                        - In each turn, a player rolls a dice as many times as he whishes. Each
+                        result get added to his ROUND score <br />
+                        <br />
+                        - BUT, if the player rolls a 1, all his ROUND score gets lost. After that,
+                        it's the next player's turn <br />
+                        <br />
+                        - The player can choose to 'Hold', which means that his ROUND score gets
+                        added to his GLOBAL score. After that, it's the next player's turn <br />
+                        <br />
+                        - The first player to reach 100 points on GLOBAL score wins the game
+                    </p>
+                </div>
+            </section>
+            <!-- game content -->
+            <section class="content">
+                <div class="content_playerBox active" id="player1">
+                    <label class="content_playerName">Player 1</label>
+                    <span class="content_playerScore" id="player1TotalScore">0</span>
+                    <span class="content_currentPlayerBox">
+                        <p class="content_current">current</p>
+                        <span class="content_playerTotalScore" id="player1Score">0</span>
+                    </span>
+                </div>
+                <div class="content_playerBox" id="player2">
+                    <label class="content_playerName">Player 2</label>
+                    <span class="content_playerScore" id="player2TotalScore">0</span>
+                    <span class="content_currentPlayerBox">
+                        <p class="content_current">current</p>
+                        <span class="content_playerTotalScore" id="player2Score" style="color: #fff"
+                            >0</span
+                        >
+                    </span>
+                </div>
+                <div>
+                    <button class="newBtn" id="newGame">New Game</button>
+                    <button class="rollDiceBtn" id="rollDice">Roll Dice</button>
+                    <button class="holdBtn" id="hold" onclick="selectPlayer()">Hold</button>
+                    <input
+                        type="text"
+                        id="finalScoreInput"
+                        placeholder="Final score"
+                        class="finalScoreInput"
+                    />
+                    <figure>
+                        <img
+                            src="./assets/dice-4.png"
+                            alt="roll-Dice"
+                            class="content_dice"
+                            id="dice-1"
+                        />
+                    </figure>
+                    <figure>
+                        <img
+                            src="./assets/dice-3.png"
+                            alt="roll-Dice"
+                            class="content_dice"
+                            id="dice-2"
+                        />
+                    </figure>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
